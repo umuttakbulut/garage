@@ -27,14 +27,14 @@ class GarageApplicationTests {
 
     @Test
     void pushVehicleToGarageTest() {
-        BaseVehicle vehicle = VehicleInstanceDto.createInstance("Car", "Blue", "34-UT-8787");
+        BaseVehicle vehicle = VehicleInstanceDto.createInstance("Car", "Red", "06-EU-8787");
         Result result = vehicleService.pushVehicleToGarage(vehicle);
         assert result.isSuccess();
     }
 
     @Test
     void popVehicleFromGarageTest() {
-        BaseVehicle vehicle = VehicleInstanceDto.createInstance("Car", "Blue", "34-UT-8787");
+        BaseVehicle vehicle = VehicleInstanceDto.createInstance("Car", "Red", "06-EU-8787");
         vehicleService.pushVehicleToGarage(vehicle);
         Result result = vehicleService.pullCarFromGarage(1);
         assert result.isSuccess();
@@ -42,10 +42,10 @@ class GarageApplicationTests {
 
     @Test
     void pushMultiVehicleToGarageTest() {
-        BaseVehicle vehicle1 = VehicleInstanceDto.createInstance("Car", "Blue", "34-UT-8787");
-        BaseVehicle vehicle2 = VehicleInstanceDto.createInstance("Jeep", "Black", "34-FG-4578");
-        BaseVehicle vehicle3 = VehicleInstanceDto.createInstance("Jeep", "White", "34-RE-1234");
-        BaseVehicle vehicle4 = VehicleInstanceDto.createInstance("Truck", "Green", "34-CV-4578");
+        BaseVehicle vehicle1 = VehicleInstanceDto.createInstance("Car", "Red", "34-EU-8787");
+        BaseVehicle vehicle2 = VehicleInstanceDto.createInstance("Jeep", "Black", "06-VG-4578");
+        BaseVehicle vehicle3 = VehicleInstanceDto.createInstance("Jeep", "White", "06-RE-1234");
+        BaseVehicle vehicle4 = VehicleInstanceDto.createInstance("Truck", "Green", "06-CV-4578");
         vehicleService.pushVehicleToGarage(vehicle1);
         vehicleService.pushVehicleToGarage(vehicle2);
         vehicleService.pushVehicleToGarage(vehicle3);
@@ -55,10 +55,10 @@ class GarageApplicationTests {
 
     @Test
     void pushAndPopVehicleToGarageTest() {
-        BaseVehicle vehicle1 = VehicleInstanceDto.createInstance("Car", "Blue", "34-UT-8787");
-        BaseVehicle vehicle2 = VehicleInstanceDto.createInstance("Jeep", "Black", "34-FG-4578");
-        BaseVehicle vehicle3 = VehicleInstanceDto.createInstance("Jeep", "White", "34-RE-1234");
-        BaseVehicle vehicle4 = VehicleInstanceDto.createInstance("Truck", "Green", "34-CV-4578");
+        BaseVehicle vehicle1 = VehicleInstanceDto.createInstance("Car", "Red", "06-EU-8787");
+        BaseVehicle vehicle2 = VehicleInstanceDto.createInstance("Jeep", "Black", "34-VG-4578");
+        BaseVehicle vehicle3 = VehicleInstanceDto.createInstance("Jeep", "White", "06-RE-1234");
+        BaseVehicle vehicle4 = VehicleInstanceDto.createInstance("Truck", "Green", "06-CV-4578");
         vehicleService.pushVehicleToGarage(vehicle1);
         vehicleService.pushVehicleToGarage(vehicle2);
         vehicleService.pushVehicleToGarage(vehicle3);
